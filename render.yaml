@@ -4,6 +4,8 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn backend.wsgi:application
+    build:
+      pythonVersion: 3.11
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: backend.settings
